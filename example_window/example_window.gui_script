@@ -1,0 +1,41 @@
+local druid = require("druid.druid")
+local example_window = require("example_window.example_window")
+
+
+---@class example_window.script
+---@field druid druid_instance
+---@field example_window example_window
+
+---@param self example_window.script
+function init(self)
+	gui.set_render_order(10)
+	self.druid = druid.new(self)
+	self.example_window = self.druid:new(example_window) --[[@as example_window]]
+end
+
+
+---@param self example_window
+---@param dt number
+function update(self, dt)
+	self.druid:update(dt)
+end
+
+
+---@param self example_window
+function final(self)
+	self.druid:final()
+end
+
+
+---@param self example_window
+---@param action_id hash
+---@param action action
+function on_input(self, action_id, action)
+	return self.druid:on_input(action_id, action)
+end
+
+
+---@param self example_window
+function on_message(self, message_id, message, sender)
+	self.druid:on_message(message_id, message, sender)
+end

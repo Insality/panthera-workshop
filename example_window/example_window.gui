@@ -1,0 +1,367 @@
+script: "/example_window/example_window.gui_script"
+fonts {
+  name: "text"
+  font: "/assets/fonts/text.font"
+}
+textures {
+  name: "gui"
+  texture: "/assets/atlases/gui.atlas"
+}
+nodes {
+  position {
+    x: 960.0
+    y: 540.0
+  }
+  size {
+    x: 1920.0
+    y: 1080.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_BOX
+  texture: "gui/empty"
+  id: "root"
+  adjust_mode: ADJUST_MODE_STRETCH
+  inherit_alpha: true
+}
+nodes {
+  type: TYPE_TEMPLATE
+  id: "ui_square_window_body"
+  parent: "root"
+  inherit_alpha: true
+  template: "/example_window/square_window_body.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "ui_square_window_body/root"
+  parent: "ui_square_window_body"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "ui_square_window_body/window_anchor"
+  parent: "ui_square_window_body/root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "ui_square_window_body/window_content"
+  parent: "ui_square_window_body/window_anchor"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "ui_square_window_body/window_background"
+  parent: "ui_square_window_body/window_content"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "ui_square_window_body/highlight_progress"
+  parent: "ui_square_window_body/window_background"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_PIE
+  id: "ui_square_window_body/outline_mask"
+  parent: "ui_square_window_body/window_background"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "ui_square_window_body/outline"
+  parent: "ui_square_window_body/outline_mask"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "ui_square_window_body/background"
+  parent: "ui_square_window_body/window_background"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "ui_square_window_body/tiling_node"
+  parent: "ui_square_window_body/background"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "ui_square_window_body/text_hint"
+  parent: "ui_square_window_body/window_content"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "ui_square_window_body/content"
+  parent: "ui_square_window_body/window_content"
+  template_node_child: true
+}
+nodes {
+  size {
+    x: 300.0
+    y: 300.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_BOX
+  texture: "gui/empty"
+  id: "content_anchor"
+  pivot: PIVOT_W
+  adjust_mode: ADJUST_MODE_STRETCH
+  parent: "root"
+  inherit_alpha: true
+}
+nodes {
+  size {
+    x: 868.0
+    y: 868.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_BOX
+  texture: "gui/empty"
+  id: "content"
+  parent: "content_anchor"
+  inherit_alpha: true
+  clipping_mode: CLIPPING_MODE_STENCIL
+}
+nodes {
+  position {
+    y: -240.0
+  }
+  type: TYPE_TEMPLATE
+  id: "button_spin"
+  parent: "content"
+  inherit_alpha: true
+  template: "/example_window/button_spin.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "button_spin/root"
+  parent: "button_spin"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "button_spin/text_spin"
+  parent: "button_spin/root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "button_spin/icon_spin"
+  parent: "button_spin/root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "button_spin/button_background"
+  parent: "button_spin/root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_PIE
+  id: "button_spin/button_mask"
+  parent: "button_spin/root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "button_spin/button_outline"
+  parent: "button_spin/button_mask"
+  template_node_child: true
+}
+nodes {
+  position {
+    x: -260.0
+    y: 140.0
+  }
+  type: TYPE_TEMPLATE
+  id: "spin_slot_1"
+  parent: "content"
+  inherit_alpha: true
+  template: "/example_window/ui_spin_slot/ui_spin_slot.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "spin_slot_1/root"
+  parent: "spin_slot_1"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "spin_slot_1/outline"
+  parent: "spin_slot_1/root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "spin_slot_1/gradient"
+  parent: "spin_slot_1/root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "spin_slot_1/spinner"
+  parent: "spin_slot_1/root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "spin_slot_1/text_value_extra"
+  parent: "spin_slot_1/spinner"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "spin_slot_1/text_value_up"
+  parent: "spin_slot_1/spinner"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "spin_slot_1/text_value"
+  parent: "spin_slot_1/spinner"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "spin_slot_1/text_value_down"
+  parent: "spin_slot_1/spinner"
+  template_node_child: true
+}
+nodes {
+  position {
+    y: 140.0
+  }
+  type: TYPE_TEMPLATE
+  id: "spin_slot_2"
+  parent: "content"
+  inherit_alpha: true
+  template: "/example_window/ui_spin_slot/ui_spin_slot.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "spin_slot_2/root"
+  parent: "spin_slot_2"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "spin_slot_2/outline"
+  parent: "spin_slot_2/root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "spin_slot_2/gradient"
+  parent: "spin_slot_2/root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "spin_slot_2/spinner"
+  parent: "spin_slot_2/root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "spin_slot_2/text_value_extra"
+  parent: "spin_slot_2/spinner"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "spin_slot_2/text_value_up"
+  parent: "spin_slot_2/spinner"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "spin_slot_2/text_value"
+  parent: "spin_slot_2/spinner"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "spin_slot_2/text_value_down"
+  parent: "spin_slot_2/spinner"
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 260.0
+    y: 140.0
+  }
+  type: TYPE_TEMPLATE
+  id: "spin_slot_3"
+  parent: "content"
+  inherit_alpha: true
+  template: "/example_window/ui_spin_slot/ui_spin_slot.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "spin_slot_3/root"
+  parent: "spin_slot_3"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "spin_slot_3/outline"
+  parent: "spin_slot_3/root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "spin_slot_3/gradient"
+  parent: "spin_slot_3/root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "spin_slot_3/spinner"
+  parent: "spin_slot_3/root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "spin_slot_3/text_value_extra"
+  parent: "spin_slot_3/spinner"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "spin_slot_3/text_value_up"
+  parent: "spin_slot_3/spinner"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "spin_slot_3/text_value"
+  parent: "spin_slot_3/spinner"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "spin_slot_3/text_value_down"
+  parent: "spin_slot_3/spinner"
+  template_node_child: true
+}
+layers {
+  name: "gui"
+}
+layers {
+  name: "text"
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

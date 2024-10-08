@@ -1,0 +1,29 @@
+local panthera = require("panthera.panthera")
+
+local animation = require("example_character.character_panthera")
+
+function init(self)
+	self.animation_idle = panthera.create_gui(animation)
+	self.animation_vertical = panthera.clone_state(self.animation_idle)
+	self.animation_horizontal = panthera.clone_state(self.animation_idle)
+
+	panthera.play(self.animation_idle, "idle", {
+		is_loop = true,
+	})
+
+	msg.post(".", "acquire_input_focus")
+end
+
+
+function on_input(self, action_id, action)
+	local distance = 1000
+	local center_x = 1920/2
+	local center_y = 1080/2
+	if action_id == nil then
+		local dx = action.screen_x - center_x + distance/2
+		local dy = action.screen_y - center_y + distance/2
+
+		panthera.set_time(self.animation_vertical, "vertical", math.min(1, dy/distance))
+		panthera.set_time(self.animation_horizontal, "horizontal", math.min(1, dx/distance))
+	end
+end

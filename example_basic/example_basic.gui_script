@@ -1,0 +1,11 @@
+local panthera = require("panthera.panthera")
+
+local animation = require("example_basic.example_basic_panthera")
+
+function init(self)
+	self.animation = panthera.create_gui(animation)
+
+	panthera.play(self.animation, "default", {
+		is_loop = true
+	})
+end

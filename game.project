@@ -1,0 +1,20 @@
+[bootstrap]
+main_collection = /example_basic/example_basic.collectionc
+render = /assets/render/default.renderc
+
+[script]
+shared_state = 1
+
+[display]
+width = 1920
+height = 1080
+
+[android]
+input_method = HiddenInputField
+
+[project]
+title = panthera-workshop
+dependencies#0 = https://github.com/Insality/defold-tweener/archive/refs/tags/3.zip
+dependencies#1 = https://github.com/Insality/panthera/archive/refs/tags/runtime.4.zip
+dependencies#2 = https://github.com/Insality/druid/archive/refs/heads/update.zip
+

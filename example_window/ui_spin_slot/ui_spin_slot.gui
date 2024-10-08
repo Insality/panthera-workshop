@@ -1,0 +1,190 @@
+fonts {
+  name: "text"
+  font: "/assets/fonts/text.font"
+}
+textures {
+  name: "gui"
+  texture: "/assets/atlases/gui.atlas"
+}
+nodes {
+  type: TYPE_BOX
+  texture: "gui/empty"
+  id: "root"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  scale {
+    x: 0.5
+    y: 0.5
+  }
+  size {
+    x: 360.0
+    y: 800.0
+  }
+  color {
+    x: 0.957
+    y: 0.745
+    z: 0.42
+  }
+  type: TYPE_BOX
+  texture: "gui/button_round_16"
+  id: "outline"
+  parent: "root"
+  inherit_alpha: true
+  slice9 {
+    x: 32.0
+    y: 32.0
+    z: 32.0
+    w: 32.0
+  }
+}
+nodes {
+  size {
+    x: 164.0
+    y: 384.0
+  }
+  color {
+    x: 0.208
+    y: 0.196
+    z: 0.275
+  }
+  type: TYPE_BOX
+  texture: "gui/rounded_gradient"
+  id: "gradient"
+  parent: "root"
+  inherit_alpha: true
+  slice9 {
+    x: 32.0
+    y: 160.0
+    z: 32.0
+    w: 160.0
+  }
+}
+nodes {
+  size {
+    x: 180.0
+    y: 400.0
+  }
+  type: TYPE_BOX
+  id: "spinner"
+  parent: "root"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    y: 180.0
+  }
+  rotation {
+    x: 90.0
+  }
+  scale {
+    x: 3.5
+    y: 3.5
+  }
+  size {
+    x: 40.0
+    y: 40.0
+  }
+  color {
+    x: 0.957
+    y: 0.745
+    z: 0.42
+  }
+  type: TYPE_TEXT
+  text: "4"
+  font: "text"
+  id: "text_value_extra"
+  parent: "spinner"
+  inherit_alpha: true
+  alpha: 0.8
+  outline_alpha: 0.0
+  shadow_alpha: 0.0
+}
+nodes {
+  position {
+    y: 130.0
+  }
+  rotation {
+    x: 40.0
+  }
+  scale {
+    x: 3.5
+    y: 3.5
+  }
+  size {
+    x: 40.0
+    y: 40.0
+  }
+  color {
+    x: 0.957
+    y: 0.745
+    z: 0.42
+  }
+  type: TYPE_TEXT
+  text: "4"
+  font: "text"
+  id: "text_value_up"
+  parent: "spinner"
+  inherit_alpha: true
+  alpha: 0.8
+  outline_alpha: 0.0
+  shadow_alpha: 0.0
+}
+nodes {
+  scale {
+    x: 3.7
+    y: 3.7
+  }
+  size {
+    x: 40.0
+    y: 40.0
+  }
+  color {
+    x: 0.957
+    y: 0.745
+    z: 0.42
+  }
+  type: TYPE_TEXT
+  text: "4"
+  font: "text"
+  id: "text_value"
+  parent: "spinner"
+  inherit_alpha: true
+  outline_alpha: 0.0
+  shadow_alpha: 0.0
+}
+nodes {
+  position {
+    y: -130.0
+  }
+  rotation {
+    x: -40.0
+  }
+  scale {
+    x: 3.5
+    y: 3.5
+  }
+  size {
+    x: 40.0
+    y: 40.0
+  }
+  color {
+    x: 0.957
+    y: 0.745
+    z: 0.42
+  }
+  type: TYPE_TEXT
+  text: "4"
+  font: "text"
+  id: "text_value_down"
+  parent: "spinner"
+  inherit_alpha: true
+  alpha: 0.8
+  outline_alpha: 0.0
+  shadow_alpha: 0.0
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
